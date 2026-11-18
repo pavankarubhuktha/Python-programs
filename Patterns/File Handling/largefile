@@ -1,0 +1,169 @@
+Reading Data from a File in Python
+1. Introduction
+
+File handling in Python is used to store, read, and manage data in files.
+
+Reading data from a file means retrieving the information that is already stored in a file.
+
+Python provides different methods to read data from a file, such as:
+
+read()
+readline()
+readlines()
+Using with open()
+Using r+ mode
+2. Opening a File
+
+To read a file, first we need to open it using the open() function.
+
+Syntax:
+
+python
+f1 = open("file_1", "r")
+
+
+Here:
+
+open() is used to open a file.
+"file_1" is the file name.
+"r" represents read mode.
+f1 is the file object.
+3. Different Ways to Read Data from a File
+Method 1: Using read()
+
+The read() method is used to read the complete content of a file.
+
+Example:
+
+python
+f1 = open("file_1", "r")
+print(f1.read())
+f1.close()
+
+
+Explanation:
+
+Opens the file in read mode.
+Reads the complete file content.
+Displays the content using print().
+Closes the file using close().
+Method 2: Using with open()
+
+The with open() statement is used to open and read a file. It automatically closes the file after completing the operation.
+
+Example:
+
+python
+with open("file_1", "r") as f1:
+    print(f1.read())
+
+
+Explanation:
+
+Opens the file in read mode.
+Reads the complete content.
+Automatically closes the file.
+
+This is the recommended way to handle files in Python.
+
+Method 3: Using r+ Mode
+
+The r+ mode is used for both reading and writing data in a file.
+
+Example:
+
+python
+f1 = open("file_1", "r+")
+print(f1.read())
+f1.close()
+
+
+Explanation:
+
+r+ allows reading and writing.
+It does not delete existing file content.
+The file cursor initially starts at position 0.
+read() reads the content from the current cursor position.
+Method 4: Using readline()
+
+The readline() method is used to read one line at a time from a file.
+
+Example:
+
+python
+f1 = open("file_1", "r")
+print(f1.readline())
+f1.close()
+
+
+Explanation:
+
+Reads only the first line.
+Each additional call reads the next line.
+Returns the line as a string.
+Method 5: Using readlines()
+
+The readlines() method is used to read all lines from a file and return them as a list.
+
+Example:
+
+python
+f1 = open("file_1", "r")
+print(f1.readlines())
+f1.close()
+
+
+Explanation:
+
+Reads all lines from the file.
+Returns the data as a list of strings.
+Each line is stored as a separate list element.
+Method 6: Using a for Loop
+
+We can also read a file line by line using a for loop.
+
+Example:
+
+python
+with open("file_1", "r") as f1:
+    for line in f1:
+        print(line)
+
+
+Explanation:
+
+Reads one line at a time.
+Displays each line.
+Useful for reading large files without loading all content into memory.
+4. Difference Between read(), readline(), and readlines()
+Method	Description	Return Type
+read()	Reads the complete file	String
+readline()	Reads one line	String
+readlines()	Reads all lines	List
+5. Important File Handling Points
+Always close a file after using it.
+Use with open() to automatically close files.
+Use "r" mode to read data.
+Use "r+" mode to read and write data.
+read() reads the complete content.
+readline() reads one line at a time.
+readlines() returns all lines as a list.
+File reading starts from the current cursor position.
+6. Python File Reading Interview Questions
+What is file handling in Python?
+What is the purpose of the open() function?
+What is the difference between read() and readline()?
+What is the difference between readline() and readlines()?
+What is the return type of read()?
+What is the return type of readlines()?
+What is the use of close()?
+Why do we use with open()?
+Can we read and write using r+ mode?
+What happens if we try to open a file that does not exist in read mode?
+What is a file cursor?
+What is the difference between seek() and tell()?
+7. Conclusion
+
+Python provides different methods to read data from files. The most commonly used methods are read(), readline(), and readlines().
+
+Understanding these methods is important for working with files and preparing for Python developer interviews.
