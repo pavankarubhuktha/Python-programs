@@ -1,9 +1,10 @@
-ch = input("enter: ")
-if ch >= 'A' and ch <='Z':
-    print("upper case")
-elif ch >= 'a' and ch <='z':
-    print("lower case")
-elif ch >= '0' and ch <='9':
-    print("digit")
-else:
-    print("spical")
+n = 5
+for i in range(1,n+1):
+    for j in range(n-i):
+        print(" ",end="")
+    for j in range(i):
+        if i == 1 or i == n or j == 0 or j == i-1:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
